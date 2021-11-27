@@ -29,7 +29,7 @@ app.use(`/api/v1`, auth);
 app.use(`/api/v1`, order);
 
 if (process.env.NODE_ENV === "PRODUCTION") {
-  app.use(express.static(path.join(__dirname, "../front-end/build")));
+  app.use(express.static(path.resolve(__dirname, "../front-end/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../front-end/build/index.html"));

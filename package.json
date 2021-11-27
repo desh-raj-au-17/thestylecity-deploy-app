@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "full e-commerce website using MERN Stack",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bavk-end/index.js",
+    "start": "node back-end/index.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back-end/index",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon back-end/index",
     "seeder": "node back-end/utils/seeder.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix front-end && npm run build --prefix front-end"
+    "heroku-prebuild": "cd front-end && npm install && npm run build && cd .. & cd back-end && npm install"
   },
   "keywords": [],
   "author": "Desh Raj and Vaishnavi Gupta",
